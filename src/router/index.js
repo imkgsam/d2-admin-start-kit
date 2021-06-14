@@ -13,11 +13,11 @@ import routes from './routes'
 
 // fix vue-router NavigationDuplicated
 const VueRouterPush = VueRouter.prototype.push
-VueRouter.prototype.push = function push (location) {
+VueRouter.prototype.push = function push(location) {
   return VueRouterPush.call(this, location).catch(err => err)
 }
 const VueRouterReplace = VueRouter.prototype.replace
-VueRouter.prototype.replace = function replace (location) {
+VueRouter.prototype.replace = function replace(location) {
   return VueRouterReplace.call(this, location).catch(err => err)
 }
 
@@ -33,14 +33,17 @@ const router = new VueRouter({
  * 权限验证
  */
 router.beforeEach(async (to, from, next) => {
-  // 确认已经加载多标签页数据 https://github.com/d2-projects/d2-admin/issues/201
-  await store.dispatch('d2admin/page/isLoaded')
-  // 确认已经加载组件尺寸设置 https://github.com/d2-projects/d2-admin/issues/198
-  await store.dispatch('d2admin/size/isLoaded')
+
+  if (to.path.startsWith('/d2/')) {
+    // 确认已经加载多标签页数据 https://github.com/d2-projects/d2-admin/issues/201
+    await store.dispatch('d2admin/page/isLoaded')
+    // 确认已经加载组件尺寸设置 https://github.com/d2-projects/d2-admin/issues/198
+    await store.dispatch('d2admin/size/isLoaded')
+  }
   // 进度条
   NProgress.start()
-  // 关闭搜索面板
-  store.commit('d2admin/search/set', false)
+  // // 关闭搜索面板
+  // store.commit('d2admin/search/set', false)
   // 验证当前路由所有的匹配中是否需要有登录验证的
   if (to.matched.some(r => r.meta.auth)) {
     // 这里暂时将cookie里是否存有token作为验证是否登录的条件
