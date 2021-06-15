@@ -6,6 +6,9 @@ import App from './App'
 import d2Admin from '@/plugin/d2admin'
 // store
 import store from '@/store/index'
+//animate.css
+import VAnimateCss from 'v-animate-css';
+
 
 // 菜单和路由设置
 import router from './router'
@@ -14,6 +17,9 @@ import { frameInRoutes } from '@/router/routes'
 
 // 核心插件
 Vue.use(d2Admin)
+
+//v-animate.css
+Vue.use(VAnimateCss)
 
 new Vue({
   router,
