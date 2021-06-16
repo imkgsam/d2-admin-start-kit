@@ -167,10 +167,7 @@
               target="_blank"
               rel="noopener noreferrer"
               title="Pinterest"
-              class="hidden-text icon icon-social-pinterest-white"
-            >
-              Pinterest</a
-            >
+            ></a>
           </li>
         </ul>
         <div class="socialmedias"></div>
