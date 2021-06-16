@@ -30,7 +30,11 @@
             >
             </el-button>
             <el-divider class="divider" direction="vertical"></el-divider>
-            <el-button plain icon="el-icon-search"></el-button>
+            <el-button
+              plain
+              icon="el-icon-search"
+              :disabled="search_input === ''"
+            ></el-button>
           </div>
         </transition>
         <div class="openBtn" @click="menuOpened = !menuOpened">
@@ -47,7 +51,9 @@
           </div>
         </div>
         <div class="header_logo">
-          <img src="@/assets/pictures/logo_white.png" />
+          <router-link to="/index">
+            <img src="@/assets/pictures/logo_white.png" />
+          </router-link>
         </div>
         <div class="header_nav">
           <ul>
@@ -75,10 +81,13 @@
         <!-- drop down menu -->
         <div class="navMini">
           <div class="wrapper">
-            <div style="height:60px"></div>
             <div class="menu_search">
-              <input placeholder="Search Products..." />
-              <el-button icon="el-icon-search" size="medium"></el-button>
+              <input placeholder="Search Products..." v-model="search_input" />
+              <el-button
+                icon="el-icon-search"
+                size="medium"
+                :disabled="search_input === ''"
+              ></el-button>
             </div>
             <div class="navbar">
               <ul>
@@ -103,8 +112,71 @@
         :style="menuOpened ? 'position:fixed;width:100%' : ''"
       ></router-view>
     </el-main>
-    <el-footer style="padding:0">
-      footer
+
+    <el-footer class="footer">
+      <div class="layout">
+        <div class="links"></div>
+        <ul class="socialmedias">
+          <li class="item">
+            <a
+              href="https://www.facebook.com/hmtheus"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Facebook"
+              class="hidden-text icon icon-social-facebook-white"
+            >
+              Facebook
+            </a>
+          </li>
+          <li class="item">
+            <a
+              href="https://twitter.com/hmusa"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Twitter"
+              class="hidden-text icon icon-social-twitter-white"
+            >
+              Twitter</a
+            >
+          </li>
+          <li class="item">
+            <a
+              href="https://www.instagram.com/hm/"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Instagram"
+              class="hidden-text icon icon-social-instagram-white"
+            >
+              Instagram</a
+            >
+          </li>
+          <li class="item">
+            <a
+              href="http://www.youtube.com/user/hennesandmauritz"
+              title="Youtube"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hidden-text icon icon-social-youtube-white"
+            >
+              Youtube</a
+            >
+          </li>
+          <li class="item">
+            <a
+              href="https://www.pinterest.com/hm/"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Pinterest"
+              class="hidden-text icon icon-social-pinterest-white"
+            >
+              Pinterest</a
+            >
+          </li>
+        </ul>
+        <div class="socialmedias"></div>
+        <div class="copyright"></div>
+        <div class="logo"></div>
+      </div>
     </el-footer>
   </el-container>
 </template>
@@ -153,13 +225,6 @@ export default {
   left: 2%;
   cursor: pointer;
   z-index: 5;
-  // .lctext {
-  //   position: relative;
-  //   float: left;
-  //   color: #fff;
-  //   margin-right: 20px;
-  //   line-height: 25px;
-  // }
   @media (min-width: $md) {
     display: none;
   }
@@ -236,7 +301,32 @@ export default {
     background: #000;
     height: 100%;
     box-shadow: 0px 2px 6px rgb(0 0 0 / 10%);
+    .navbar {
+      display: flex;
+      margin-top: 3%;
+      justify-content: space-around;
+      // float: left;
+      // width: 70%;
+      // margin-left: 5%;
+      ul {
+        list-style-type: none;
+        text-align: center;
+        padding: 0;
+        li {
+          margin: 3% 0;
+          a {
+            font-size: 25px;
+            color: #ccc;
+            &:hover {
+              color: #ddd;
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
     .menu_search {
+      padding-top: 60px;
       width: 100%;
       button {
         background: transparent;
@@ -246,23 +336,26 @@ export default {
       }
       input {
         color: #ddd;
+        padding: 2%;
         margin-top: 8%;
-        margin-left: 10%;
         font-size: 20px;
-        width: 60%;
-        background: transparent;
-        border-color: #222;
+        width: 70%;
+        border-radius: 15px;
+        background: #333;
+        border: none;
         &:focus {
-          border-color: #222;
           outline: none;
         }
       }
     }
   }
 }
-
 .openMenu {
+  .header_logo {
+    position: fixed;
+  }
   .openBtn {
+    position: fixed;
     .lcitem.top {
       transform: rotateZ(45deg);
       top: 49%;
@@ -286,7 +379,6 @@ export default {
   padding: 0;
   background: rgba(0, 0, 0, 0.8);
 }
-
 .i_page {
   display: flex;
   background: #888;
@@ -300,8 +392,6 @@ export default {
     width: 100%;
     display: inline-block;
     float: right;
-    // padding-left: calc(100% / 4);
-    // padding-right: calc(100% / 6);
     li {
       padding-right: 20px;
       float: right;
@@ -334,10 +424,6 @@ export default {
     width: 10%;
     padding-left: 30px;
   }
-}
-.collapse_header_menu {
-  // position: fixed;
-  // width: 100%;
 }
 .search_btn {
   display: none;
@@ -374,7 +460,7 @@ export default {
     margin-top: 18px;
     font-size: 17px;
     border: none;
-    width: 90%;
+    width: 75%;
     outline: none;
   }
 }
@@ -400,5 +486,20 @@ export default {
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
+}
+
+//footer style
+.footer {
+  padding: 0;
+  .layout {
+    .links {
+    }
+    .socialmedias {
+    }
+    .copyright {
+    }
+    .logo {
+    }
+  }
 }
 </style>
