@@ -6,8 +6,12 @@ import App from './App'
 import d2Admin from '@/plugin/d2admin'
 // store
 import store from '@/store/index'
-//animate.css
-import VAnimateCss from 'v-animate-css';
+//swiper
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+//swiper css
+import 'swiper/swiper-bundle.css'
+
+
 
 
 // 菜单和路由设置
@@ -17,9 +21,12 @@ import { frameInRoutes } from '@/router/routes'
 
 // 核心插件
 Vue.use(d2Admin)
+//swiper global
+Vue.use(VueAwesomeSwiper)
 
-//v-animate.css
-Vue.use(VAnimateCss)
+
+
+
 
 new Vue({
   router,

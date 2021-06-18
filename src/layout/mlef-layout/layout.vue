@@ -52,7 +52,7 @@
         </div>
         <div class="header_logo">
           <router-link to="/index">
-            <img src="@/assets/pictures/logo_white.png" />
+            <img src="@/assets/logo/logo_white.png" />
           </router-link>
         </div>
         <div class="header_nav">
@@ -61,13 +61,16 @@
               <router-link to="/index">Home</router-link>
             </li>
             <li>
-              <router-link to="/index">Company</router-link>
+              <router-link to="/produc">Company</router-link>
             </li>
             <li>
               <router-link to="/index">Events</router-link>
             </li>
             <li>
               <router-link to="/index">Contact</router-link>
+            </li>
+            <li>
+              <router-link to="/productlist">Product</router-link>
             </li>
           </ul>
         </div>
@@ -102,6 +105,9 @@
                 </li>
                 <li>
                   <router-link to="/index">Contact</router-link>
+                </li>
+                <li>
+                  <router-link to="/productlist">Product</router-link>
                 </li>
               </ul>
             </div>
@@ -248,7 +254,7 @@ export default {
   top: 20px;
   left: 2%;
   cursor: pointer;
-  z-index: 5;
+  z-index: 6;
   @media (min-width: $md) {
     display: none;
   }
@@ -310,15 +316,12 @@ export default {
   text-align: center;
   padding-top: 0;
   overflow: hidden;
-  visibility: hidden;
   transform: translate3d(0, -100%, 0);
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 2;
-  transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+  z-index: 4;
+  transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
   .wrapper {
     padding-top: 0;
     width: 100%;
@@ -438,7 +441,7 @@ export default {
   }
 }
 .header_logo {
-  z-index: 4;
+  z-index: 5;
   // margin: auto;
   width: 100%;
   text-align: center;
@@ -492,7 +495,8 @@ export default {
   display: none;
 }
 .openSearchBar .shade_layer {
-  display: none;
+  visibility: hidden;
+  transition: visibility 0s, opacity 0.5s linear;
 }
 
 .shade_layer {
@@ -503,6 +507,7 @@ export default {
   background: #111;
   opacity: 0.6;
   z-index: 9;
+  transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
 }
 .fade-enter-active,
 .fade-leave-active {
@@ -523,7 +528,7 @@ export default {
         display: none;
       }
       margin: 0 15px;
-      ::v-deep{
+      ::v-deep {
         .el-collapse {
           box-sizing: border-box;
           padding-left: 25px;
@@ -537,13 +542,13 @@ export default {
             border: none;
             .el-collapse-item__content {
               padding: 0;
-              ul{
-                list-style-type:none;
+              ul {
+                list-style-type: none;
                 padding-left: 25px;
                 li a {
                   font-size: 13px;
                   line-height: 15px;
-                  color:#333;
+                  color: #333;
                 }
               }
             }

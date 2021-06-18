@@ -21,15 +21,14 @@ const frameIn = [
         },
         component: _import('website/index')
       },
-      // 演示页面
       {
-        path: 'about',
-        name: 'about',
+        path: 'productlist',
+        name: 'productlist',
         meta: {
-          title: 'about',
+          title: 'productlist',
           auth: false
         },
-        component: _import('website/about')
+        component: _import('website/productlist')
       },
     ]
   },
