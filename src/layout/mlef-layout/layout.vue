@@ -94,19 +94,19 @@
             </div>
             <div class="navbar">
               <ul>
-                <li>
+                <li @click="menuOpened = false">
                   <router-link to="/index">Home</router-link>
                 </li>
-                <li>
+                <li @click="menuOpened = false">
                   <router-link to="/index">Company</router-link>
                 </li>
-                <li>
+                <li @click="menuOpened = false">
                   <router-link to="/index">Events</router-link>
                 </li>
-                <li>
+                <li @click="menuOpened = false">
                   <router-link to="/index">Contact</router-link>
                 </li>
-                <li>
+                <li @click="menuOpened = false">
                   <router-link to="/productlist">Product</router-link>
                 </li>
               </ul>

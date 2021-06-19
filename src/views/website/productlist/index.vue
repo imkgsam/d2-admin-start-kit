@@ -4,8 +4,8 @@
       <div class="title">
         <h3>EMON SUITE</h3>
       </div>
-      <ul>
-        <li>
+      <div class="suite_list">
+        <div class="suite_item">
           <router-link to="/index">
             <div class="suite_img float_l">
               <span class="suite1"></span>
@@ -20,8 +20,8 @@
               <span>MORE</span>
             </div>
           </router-link>
-        </li>
-        <li>
+        </div>
+        <div class="suite_item">
           <router-link to="/index">
             <div class="suite_img float_r">
               <span class="suite2"> </span>
@@ -37,8 +37,8 @@
               <span>MORE</span>
             </div>
           </router-link>
-        </li>
-      </ul>
+        </div>
+      </div>
     </div>
     <div class="subcat_container"></div>
   </div>
@@ -71,11 +71,14 @@ export default {
     }
   }
   .suite_container {
-    ul {
+    .suite_list {
       list-style-type: none;
-      li {
-        width: 1400px;
-        height: 430px;
+      .suite_item {
+        width: 100%;
+        @media (min-width: $md) {
+          width: 1400px;
+          height: 430px;
+        }
         margin: auto;
         margin-bottom: 35px;
         box-shadow: 0 0 60px 0 rgb(0 0 0 / 10%);
