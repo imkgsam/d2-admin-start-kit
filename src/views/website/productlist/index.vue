@@ -4,41 +4,38 @@
       <div class="title">
         <h3>EMON SUITE</h3>
       </div>
-      <div class="suite_list">
-        <div class="suite_item">
-          <router-link to="/index">
-            <div class="suite_img float_l">
-              <span class="suite1"></span>
-            </div>
-            <div class="suite_desc">
-              <h3>CLINT</h3>
-              <p>
-                Lving on the leading edge of design and technology.The fuidlines
-                and sleek silhouettes of product bring a minimalist lookto the
-                bathroom that Complements a variety of decor.
-              </p>
-              <span>MORE</span>
-            </div>
-          </router-link>
-        </div>
-        <div class="suite_item">
-          <router-link to="/index">
-            <div class="suite_img float_r">
-              <span class="suite2"> </span>
-            </div>
-            <div class="suite_desc">
-              <h3>NATASHA</h3>
-              <p>
-                This collection is steeped in the traditions of classic
-                Americandesign while embracing a modem eclectic
-                sensibility.Thepeaceful bathroom is so cozy that makes people
-                live afantastic high quality life.
-              </p>
-              <span>MORE</span>
-            </div>
-          </router-link>
-        </div>
-      </div>
+      <el-row class="suite_item">
+        <el-col :xs="24" :sm="12" class="suite_img fright">
+          <!-- <span class="suite1"></span> -->
+          <img src="@/assets/pictures/productlist/suite_01.jpg" />
+          <div class="suite_img_title"><h3>suite 1</h3></div>
+        </el-col>
+        <el-col :xs="24" :sm="12" class="suite_desc fleft">
+          <h3>CLINT</h3>
+          <p>
+            Lving on the leading edge of design and technology.The fuidlines and
+            sleek silhouettes of product bring a minimalist lookto the bathroom
+            that Complements a variety of decor.
+          </p>
+          <span>MORE</span>
+        </el-col>
+      </el-row>
+      <el-row class="suite_item">
+        <el-col :xs="24" :sm="12" class="suite_img fleft">
+          <!-- <span class="suite1"></span> -->
+          <img src="@/assets/pictures/productlist/suite_02.jpg" />
+          <div class="suite_img_title"><h3>suite 2</h3></div>
+        </el-col>
+        <el-col :xs="24" :sm="12" class="suite_desc fright">
+          <h3>CLINT</h3>
+          <p>
+            Lving on the leading edge of design and technology.The fuidlines and
+            sleek silhouettes of product bring a minimalist lookto the bathroom
+            that Complements a variety of decor.
+          </p>
+          <span>MORE</span>
+        </el-col>
+      </el-row>
     </div>
     <div class="subcat_container"></div>
   </div>
@@ -71,76 +68,42 @@ export default {
     }
   }
   .suite_container {
-    .suite_list {
-      list-style-type: none;
-      .suite_item {
-        width: 100%;
-        @media (min-width: $md) {
-          width: 1400px;
-          height: 430px;
+    .suite_item {
+      &:hover {
+        background: #0eaee0;
+      }
+      margin: 0 1%;
+      @media (min-width: $md) {
+        margin: 0 5%;
+      }
+      padding-bottom: 10%;
+      .suite_img {
+        img {
+          width: 100%;
         }
-        margin: auto;
-        margin-bottom: 35px;
-        box-shadow: 0 0 60px 0 rgb(0 0 0 / 10%);
-        &:hover {
-          .suite_img span {
-            transform: scale(1.05, 1.05);
-          }
-          .suite_desc {
-            background: #0eaee0;
-            h3 {
-              color: #fff;
-            }
-            p {
-              color: #a6d9f0;
-            }
-            span {
-              width: 200px;
-              border-color: #fff;
-              color: #a6d9f0;
-            }
-          }
-        }
-        a {
-          text-decoration: none;
-          color: #555;
-          line-height: 200%;
-          .suite_img {
-            float: left;
-            width: 700px;
-            height: 430px;
-            overflow: hidden;
-            background: url("../../../assets/logo/logo.png") center no-repeat
-              #f8f8f8;
-            span {
-              display: block;
-              width: 100%;
-              height: 100%;
-            }
-            .suite1 {
-              background-image: url("../../../assets/pictures/productlist/suite_01.jpg");
-            }
-            .suite2 {
-              background-image: url("../../../assets/pictures/productlist/suite_02.jpg");
-            }
-          }
-          .suite_desc {
-            float: right;
-            width: 700px;
-            height: 430px;
-            padding: 110px 140px 0 110px;
-            box-sizing: border-box;
-            background: #fff;
-          }
-          .float_l {
-            float: left;
-          }
-          .float_r {
-            float: right;
+        .suite_img_title {
+          font-size: 20px;
+          text-align: center;
+          display: block;
+          @media (min-width: $md) {
+            display: none;
           }
         }
       }
+      .suite_desc {
+        display: none;
+        @media (min-width: $md) {
+          display: block;
+        }
+        padding: 5% 5% 0 5%;
+      }
     }
   }
+}
+.fright {
+  float: right;
+}
+.fleft {
+  float: left;
 }
 </style>
