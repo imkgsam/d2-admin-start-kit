@@ -30,6 +30,7 @@
     "swiper": "^6.7.0",
     "ua-parser-js": "^0.7.20",
     "v-animate-css": "0.0.3",
+    "vanilla-tilt": "^1.7.0",
     "vue": "^2.6.11",
     "vue-awesome-swiper": "^4.1.1",
     "vue-i18n": "^8.15.1",

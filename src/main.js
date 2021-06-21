@@ -14,6 +14,9 @@ import 'swiper/swiper-bundle.css'
 
 
 
+
+
+
 // 菜单和路由设置
 import router from './router'
 import { menuHeader, menuAside } from '@/menu'
@@ -23,6 +26,8 @@ import { frameInRoutes } from '@/router/routes'
 Vue.use(d2Admin)
 //swiper global
 Vue.use(VueAwesomeSwiper)
+
+
 
 
 

@@ -61,7 +61,7 @@
               <router-link to="/index">Home</router-link>
             </li>
             <li>
-              <router-link to="/produc">Company</router-link>
+              <router-link to="/index">Company</router-link>
             </li>
             <li>
               <router-link to="/index">Events</router-link>
