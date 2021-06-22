@@ -568,6 +568,7 @@ export default {
       }
     }
     .socialmedias {
+      padding-top: 3%;
       list-style-type: none;
       display: flex;
       justify-content: space-around;

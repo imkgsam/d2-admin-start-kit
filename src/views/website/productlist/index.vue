@@ -1,44 +1,46 @@
 <template>
   <div class="container">
     <div class="suite_container">
-      <div class="title">
+      <div class="suite_title">
         <h3>EMON SUITE</h3>
       </div>
       <el-row class="suite_item">
-        <el-col :xs="24" :sm="12" class="suite_img fright r20br">
-          <!-- <span class="suite1"></span> -->
-          <img src="@/assets/pictures/productlist/suite_01.jpg" />
-          <!-- <div class="suite_img_title"><h3>suite 1</h3></div> -->
-        </el-col>
-        <el-col :xs="24" :sm="12" class="suite_desc fleft l20br">
-          <h3>CLINT</h3>
-          <p>
-            Lving on the leading edge of design and technology.The fuidlines and
-            sleek silhouettes of product bring a minimalist lookto the bathroom
-            that Complements a variety of decor.
-          </p>
-          <span>MORE</span>
-        </el-col>
+        <router-link to="/index">
+          <el-col :xs="24" :sm="12" class="suite_img fright r20br">
+            <img src="@/assets/pictures/productlist/suite_01.jpg" />
+          </el-col>
+          <el-col :xs="24" :sm="12" class="suite_desc fleft l20br">
+            <h3>CLINT</h3>
+            <p>
+              Lving on the leading edge of design and technology.The fuidlines
+              and sleek silhouettes of product bring a minimalist lookto the
+              bathroom that Complements a variety of decor.
+            </p>
+            <span>MORE</span>
+          </el-col>
+        </router-link>
       </el-row>
       <el-row class="suite_item">
-        <el-col :xs="24" :sm="12" class="suite_img fleft l20br">
-          <!-- <span class="suite1"></span> -->
-          <img src="@/assets/pictures/productlist/suite_02.jpg" />
-          <!-- <div class="suite_img_title"><h3>suite 2</h3></div> -->
-        </el-col>
-        <el-col :xs="24" :sm="12" class="suite_desc fright r20br">
-          <h3>CLINT</h3>
-          <p>
-            Lving on the leading edge of design and technology.The fuidlines and
-            sleek silhouettes of product bring a minimalist lookto the bathroom
-            that Complements a variety of decor.
-          </p>
-          <span>MORE</span>
-        </el-col>
+        <router-link to="/index">
+          <el-col :xs="24" :sm="12" class="suite_img fleft l20br">
+            <!-- <span class="suite1"></span> -->
+            <img src="@/assets/pictures/productlist/suite_02.jpg" />
+            <!-- <div class="suite_img_title"><h3>suite 2</h3></div> -->
+          </el-col>
+          <el-col :xs="24" :sm="12" class="suite_desc fright r20br">
+            <h3>CLINT</h3>
+            <p>
+              Lving on the leading edge of design and technology.The fuidlines
+              and sleek silhouettes of product bring a minimalist lookto the
+              bathroom that Complements a variety of decor.
+            </p>
+            <span>MORE</span>
+          </el-col>
+        </router-link>
       </el-row>
     </div>
     <div class="subcat_container">
-      <div class="title">
+      <div class="subcat_title">
         <h3>EMON SUBCATS</h3>
       </div>
       <el-row class="subcat_list">
@@ -76,94 +78,124 @@
           </router-link>
         </el-col>
       </el-row>
-      <!-- <el-row>
-          <el-col class="subcat_item" :xs="24" :sm="8">
+      <el-row class="subcat_list">
+        <el-col class="subcat_item" :xs="24" :sm="8">
           <router-link to="/index">
-            <img src="@/assets/pictures/productlist/pro_04.jpg" />
-            <h3>
-              subcat
-            </h3>
+            <div class="tilt_container" data-tilt>
+              <img src="@/assets/pictures/productlist/pro_04.jpg" />
+              <h3>
+                subcat
+              </h3>
+              <el-button>More</el-button>
+            </div>
           </router-link>
         </el-col>
         <el-col class="subcat_item" :xs="24" :sm="8">
           <router-link to="/index">
-            <img src="@/assets/pictures/productlist/pro_05.jpg" />
-            <h3>
-              subcat
-            </h3>
+            <div class="tilt_container" data-tilt>
+              <img src="@/assets/pictures/productlist/pro_05.jpg" />
+              <h3>
+                subcat
+              </h3>
+              <el-button>More</el-button>
+            </div>
           </router-link>
         </el-col>
         <el-col class="subcat_item" :xs="24" :sm="8">
           <router-link to="/index">
-            <img src="@/assets/pictures/productlist/pro_06.jpg" />
-            <h3>
-              subcat
-            </h3>
+            <div class="tilt_container" data-tilt>
+              <img src="@/assets/pictures/productlist/pro_06.jpg" />
+              <h3>
+                subcat
+              </h3>
+              <el-button>More</el-button>
+            </div>
           </router-link>
         </el-col>
       </el-row>
-      <el-row>
+      <el-row class="subcat_list">
         <el-col class="subcat_item" :xs="24" :sm="8">
           <router-link to="/index">
-            <img src="@/assets/pictures/productlist/pro_07.jpg" />
-            <h3>
-              subcat
-            </h3>
+            <div class="tilt_container" data-tilt>
+              <img src="@/assets/pictures/productlist/pro_07.jpg" />
+              <h3>
+                subcat
+              </h3>
+              <el-button>More</el-button>
+            </div>
           </router-link>
         </el-col>
         <el-col class="subcat_item" :xs="24" :sm="8">
           <router-link to="/index">
-            <img src="@/assets/pictures/productlist/pro_08.jpg" />
-            <h3>
-              subcat
-            </h3>
+            <div class="tilt_container" data-tilt>
+              <img src="@/assets/pictures/productlist/pro_08.jpg" />
+              <h3>
+                subcat
+              </h3>
+              <el-button>More</el-button>
+            </div>
           </router-link>
         </el-col>
         <el-col class="subcat_item" :xs="24" :sm="8">
           <router-link to="/index">
-            <img src="@/assets/pictures/productlist/pro_09.jpg" />
-            <h3>
-              subcat
-            </h3>
-          </router-link>
-        </el-col>
-      </el-row>
-      <el-row>
-        <el-col class="subcat_item" :xs="24" :sm="8">
-          <router-link to="/index">
-            <img src="@/assets/pictures/productlist/pro_10.jpg" />
-            <h3>
-              subcat
-            </h3>
-          </router-link>
-        </el-col>
-        <el-col class="subcat_item" :xs="24" :sm="8">
-          <router-link to="/index">
-            <img src="@/assets/pictures/productlist/pro_11.jpg" />
-            <h3>
-              subcat
-            </h3>
-          </router-link>
-        </el-col>
-        <el-col class="subcat_item" :xs="24" :sm="8">
-          <router-link to="/index">
-            <img src="@/assets/pictures/productlist/pro_12.jpg" />
-            <h3>
-              subcat
-            </h3>
+            <div class="tilt_container" data-tilt>
+              <img src="@/assets/pictures/productlist/pro_09.jpg" />
+              <h3>
+                subcat
+              </h3>
+              <el-button>More</el-button>
+            </div>
           </router-link>
         </el-col>
       </el-row>
-      <el-row>
+      <el-row class="subcat_list">
         <el-col class="subcat_item" :xs="24" :sm="8">
           <router-link to="/index">
-            <img src="@/assets/pictures/productlist/pro_13.jpg" />
-            <h3>
-              subcat
-            </h3>
+            <div class="tilt_container" data-tilt>
+              <img src="@/assets/pictures/productlist/pro_10.jpg" />
+              <h3>
+                subcat
+              </h3>
+              <el-button>More</el-button>
+            </div>
           </router-link>
         </el-col>
-      </el-row> -->
+        <el-col class="subcat_item" :xs="24" :sm="8">
+          <router-link to="/index">
+            <div class="tilt_container" data-tilt>
+              <img src="@/assets/pictures/productlist/pro_11.jpg" />
+              <h3>
+                subcat
+              </h3>
+              <el-button>More</el-button>
+            </div>
+          </router-link>
+        </el-col>
+        <el-col class="subcat_item" :xs="24" :sm="8">
+          <router-link to="/index">
+            <div class="tilt_container" data-tilt>
+              <img src="@/assets/pictures/productlist/pro_12.jpg" />
+              <h3>
+                subcat
+              </h3>
+              <el-button>More</el-button>
+            </div>
+          </router-link>
+        </el-col>
+      </el-row>
+      <el-row class="subcat_list">
+        <el-col class="subcat_item" :xs="24" :sm="8">
+          <router-link to="/index">
+            <div class="tilt_container" data-tilt>
+              <img src="@/assets/pictures/productlist/pro_13.jpg" />
+              <h3>
+                subcat
+              </h3>
+              <el-button>More</el-button>
+            </div>
+          </router-link>
+        </el-col>
+      </el-row>
     </div>
   </div>
 </template>
@@ -194,7 +226,27 @@ $subcat_border_radius: 20px;
   @media (min-width: $md) {
     padding: 65px 0;
   }
-  .title {
+  .subcat_title {
+    h3 {
+      font-size: 25px !important;
+    }
+    padding-top: 30px;
+    padding-bottom: 15px;
+    @media (min-width: $md) {
+      padding-bottom: 0px;
+      h3 {
+        font-size: 32px;
+      }
+    }
+    text-align: center;
+    h3 {
+      color: #333;
+      font-size: 32px;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+  }
+  .suite_title {
     h3 {
       font-size: 25px !important;
     }
@@ -221,7 +273,7 @@ $subcat_border_radius: 20px;
       padding-bottom: 6%;
       @media (min-width: $md) {
         padding-bottom: 0;
-        margin: 0 5%;
+        margin: 0 8%;
         &:hover {
           background: #0eaee0;
           .suite_img {
@@ -244,33 +296,56 @@ $subcat_border_radius: 20px;
           }
         }
       }
-      .suite_img {
-        overflow: hidden;
-        img {
-          transform: scale(1.01, 1.01);
-          width: 100%;
-        }
-        .suite_img_title {
-          font-size: 20px;
-          text-align: center;
-          display: block;
-          @media (min-width: $md) {
-            display: none;
+      a {
+        text-decoration: none;
+        color: inherit;
+        .suite_img {
+          overflow: hidden;
+          img {
+            transform: scale(1.01, 1.01);
+            width: 100%;
+          }
+          .suite_img_title {
+            font-size: 20px;
+            text-align: center;
+            display: block;
+            @media (min-width: $md) {
+              display: none;
+            }
           }
         }
-      }
-      .suite_desc {
-        // display: none;
-        @media (min-width: $md) {
-          display: block;
+        .suite_desc {
+          @media (min-width: $md) {
+            display: block;
+            h3 {
+              display: inline-block;
+            }
+          }
+          padding: 5% 5% 0 5%;
+          h3 {
+            font-size: 30px;
+          }
+          span {
+            display: none;
+            border-top: 2px solid #7f7f7f;
+            color: #a8a8a8;
+            font-size: 13px;
+            line-height: 40px;
+            background: url("../../../assets/pictures/productlist/pro_more02.png")
+              no-repeat;
+            background-position: 177px 0;
+            transition: all 1s;
+            position: absolute;
+            bottom: 25%;
+          }
         }
-        padding: 5% 5% 0 5%;
       }
     }
   }
   .subcat_container {
     .subcat_list {
       margin: 3%;
+      margin-top: 1%;
       @media (min-width: $md) {
         display: flex;
         justify-content: space-around;
@@ -306,7 +381,7 @@ $subcat_border_radius: 20px;
               transform: translateZ(100px);
               position: absolute;
               bottom: 10%;
-              left: 44%;
+              left: 41%;
               color: white;
               transition-duration: 0.5s;
             }
@@ -315,13 +390,20 @@ $subcat_border_radius: 20px;
         &:hover {
           a {
             .tilt_container {
-              img {
-              }
               h3 {
-                color: #0eaee0;
+                color: #fff;
               }
               button {
                 background: #0eaee0;
+              }
+            }
+          }
+          @media (min-width: $md) {
+            a {
+              .tilt_container {
+                h3 {
+                  color: orange;
+                }
               }
             }
           }
