@@ -7,8 +7,8 @@
         height="100%"
         arrow="hover"
       >
-        <el-carousel-item class="carousel_item">
-          <video muted loop autoplay>
+        <el-carousel-item class="carousel_item video_container">
+          <video ref="video" muted loop>
             <source src="@/assets/video/banner_video.mp4" type="video/mp4" />
           </video>
         </el-carousel-item>
@@ -48,6 +48,17 @@
 export default {
   name: "index",
   methods: {
+    setVideoAutoPlayAttr() {
+      console.log("in setVideoAutoPlayAttr");
+      let screenWidth = window.innerWidth;
+      console.log("screenwidth: ", screenWidth);
+      console.log("refs ", this.$refs);
+      if (screenWidth < 768) {
+        this.$refs["video"].removeAttribute("autoplay");
+      } else {
+        this.$refs["video"].setAttribute("autoplay", "autoplay");
+      }
+    },
     onSwiper(swiper) {
       console.log(swiper);
     },
@@ -55,8 +66,17 @@ export default {
       console.log("slide change");
     }
   },
+  mounted() {
+    console.log("in mounted");
+    this.setVideoAutoPlayAttr();
+  },
+  destroyed() {
+    console.log("in destroyed");
+  },
   data() {
     return {
+      video_loading: true,
+      loadingInstance: null,
       swiperOptions: {
         pagination: {
           el: ".swiper-pagination"
@@ -84,27 +104,9 @@ export default {
       height: 100% !important;
     }
     .video_container {
+      display: none;
       @media (min-width: $md) {
         display: block;
-      }
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 100%;
-      overflow: hidden;
-      video {
-        /* Make video to at least 100% wide and tall */
-        min-width: 100%;
-        min-height: 100%;
-
-        /* Setting width & height to auto prevents the browser from stretching or squishing the video */
-        width: auto;
-        height: auto;
-        /* Center the video */
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
       }
     }
     height: calc(100vh - 60px);

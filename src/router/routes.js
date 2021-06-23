@@ -30,6 +30,15 @@ const frameIn = [
         },
         component: _import('website/productlist')
       },
+      {
+        path: 'vr',
+        name: 'vr',
+        meta: {
+          title: 'vr',
+          auth: false
+        },
+        component: _import('website/vr')
+      },
     ]
   },
   {

@@ -157,7 +157,112 @@
             </el-collapse-item>
           </el-collapse>
         </div>
-        <div class="links_b"></div>
+        <div class="links_b">
+          <nav class="link_group">
+            <h4>title</h4>
+            <div class="link_list">
+              <div class="link_item">
+                <router-link to="/index">link</router-link>
+              </div>
+              <div class="link_item">
+                <router-link to="/index">link</router-link>
+              </div>
+              <div class="link_item">
+                <router-link to="/index">link</router-link>
+              </div>
+              <div class="link_item">
+                <router-link to="/index">link</router-link>
+              </div>
+              <div class="link_item">
+                <router-link to="/index">link</router-link>
+              </div>
+              <div class="link_item">
+                <router-link to="/index">link</router-link>
+              </div>
+              <div class="link_item">
+                <router-link to="/index">link</router-link>
+              </div>
+            </div>
+          </nav>
+          <nav class="link_group">
+            <h4>title</h4>
+            <div class="link_list">
+              <div class="link_item">
+                <router-link to="/index">link</router-link>
+              </div>
+              <div class="link_item">
+                <router-link to="/index">link</router-link>
+              </div>
+              <div class="link_item">
+                <router-link to="/index">link</router-link>
+              </div>
+              <div class="link_item">
+                <router-link to="/index">link</router-link>
+              </div>
+              <div class="link_item">
+                <router-link to="/index">link</router-link>
+              </div>
+              <div class="link_item">
+                <router-link to="/index">link</router-link>
+              </div>
+              <div class="link_item">
+                <router-link to="/index">link</router-link>
+              </div>
+            </div>
+          </nav>
+          <nav class="link_group">
+            <h4>title</h4>
+            <div class="link_list">
+              <div class="link_item">
+                <router-link to="/index">link</router-link>
+              </div>
+              <div class="link_item">
+                <router-link to="/index">link</router-link>
+              </div>
+              <div class="link_item">
+                <router-link to="/index">link</router-link>
+              </div>
+              <div class="link_item">
+                <router-link to="/index">link</router-link>
+              </div>
+              <div class="link_item">
+                <router-link to="/index">link</router-link>
+              </div>
+              <div class="link_item">
+                <router-link to="/index">link</router-link>
+              </div>
+              <div class="link_item">
+                <router-link to="/index">link</router-link>
+              </div>
+            </div>
+          </nav>
+          <nav class="link_group">
+            <h4>title</h4>
+            <div class="link_list">
+              <div class="link_item">
+                <router-link to="/index">link</router-link>
+              </div>
+              <div class="link_item">
+                <router-link to="/index">link</router-link>
+              </div>
+              <div class="link_item">
+                <router-link to="/index">link</router-link>
+              </div>
+              <div class="link_item">
+                <router-link to="/index">link</router-link>
+              </div>
+              <div class="link_item">
+                <router-link to="/index">link</router-link>
+              </div>
+              <div class="link_item">
+                <router-link to="/index">link</router-link>
+              </div>
+              <div class="link_item">
+                <router-link to="/index">link</router-link>
+              </div>
+            </div>
+          </nav>
+        </div>
         <ul class="socialmedias">
           <li>
             <a href="" target="_blank">
@@ -557,14 +662,53 @@ export default {
       }
     }
     .links_b {
+      justify-content: space-evenly;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 960px;
+      position: relative;
       display: none;
       background: transparent;
       @media (min-width: $md) {
-        display: block;
+        display: flex;
       }
-      margin: 0 15px;
       .el-collapse-item__content ul {
         list-style-type: none;
+      }
+      .link_group {
+        width: calc(25% - 2.5%);
+        box-sizing: border-box;
+        float: left;
+        min-height: 1px;
+        margin: 5% 0 2.5%;
+        letter-spacing: 1px;
+        h4 {
+          letter-spacing: 0;
+          text-transform: uppercase;
+          margin: 0 0 16px;
+          padding: 0;
+          cursor: default;
+          font-weight: normal;
+        }
+        .link_list {
+          display: block;
+          .link_item {
+            background: transparent;
+            line-height: 1.5;
+            position: relative;
+            text-align: left;
+            a {
+              padding: 0;
+              line-height: 32px;
+              color: #444;
+              border-bottom: 0;
+              display: inline-block;
+              &:hover {
+                text-decoration: underline !important;
+              }
+            }
+          }
+        }
       }
     }
     .socialmedias {
