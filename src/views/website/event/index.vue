@@ -5,13 +5,15 @@
         <h3>EVENTS</h3>
       </div>
       <div class="event_list_block">
-        <ul class="event_list">
-          <li v-for="(event, idx) in event_list" :key="idx">
-            <div class="event_item">
-              <h3>{{ event.title }}</h3>
-            </div>
-          </li>
-        </ul>
+        <div class="event_list">
+          <div v-for="(event, idx) in event_list" :key="idx" class="event_item">
+            <router-link to="/index">
+              <div class="event_img">1</div>
+              <div class="event_content">2</div>
+              <div class="event_date">3</div>
+            </router-link>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -29,17 +31,40 @@ export default {
           content: `Relying on local clay resource advantage and years" persistent operation in sanitary ware industry, Cleanman is committed to providing the highest level of customer service and a comprehensive product...`,
           date: Date.parse("15 Jan 2020 GMT")
         },
-        {
-          title: "Event 2 title",
-          imgPath: "http://cleanman-cn.com/uploadimg/event_bimg.jpg",
-          content: `Relying on local clay resource advantage and years" persistent operation in sanitary ware industry, Cleanman is committed to providing the highest level of customer service and a comprehensive product...`,
-          date: Date.parse("21 May 2021 GMT")
-        }
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {}
       ]
     };
   },
   computed: {},
-  mounted() {}
+  mounted() {},
+  methods: {}
 };
 </script>
 <style scoped lang="scss">
@@ -68,11 +93,40 @@ export default {
     }
   }
   .event_container {
-    height: 100vh;
+    height: calc(100vh - 60px);
     width: 100%;
     background-image: url("../../../assets/pictures/event/bg.jpeg");
     background-size: cover;
     background-repeat: no-repeat;
+    .event_list_block {
+      height: 75%;
+      background: white;
+      margin: 0 8%;
+      .event_list {
+        padding: 0;
+        overflow: scroll;
+        height: 100%;
+        margin: 0;
+        .event_item {
+          border: 1px solid black;
+          padding: 10px;
+          a {
+            text-decoration: none;
+            color: inherit;
+            display: inline-block;
+            .event_img {
+              float: left;
+            }
+            .event_content {
+              float: left;
+            }
+            .event_date {
+              float: right;
+            }
+          }
+        }
+      }
+    }
   }
 }
 </style>
