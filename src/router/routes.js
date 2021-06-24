@@ -39,6 +39,15 @@ const frameIn = [
         },
         component: _import('website/vr')
       },
+      {
+        path: 'event',
+        name: 'event',
+        meta: {
+          title: 'event',
+          auth: false
+        },
+        component: _import('website/event')
+      },
     ]
   },
   {

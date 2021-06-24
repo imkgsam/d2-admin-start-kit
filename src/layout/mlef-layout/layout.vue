@@ -64,7 +64,7 @@
               <router-link to="/index">Company</router-link>
             </li>
             <li>
-              <router-link to="/index">Events</router-link>
+              <router-link to="/event">Events</router-link>
             </li>
             <li>
               <router-link to="/index">Contact</router-link>
@@ -101,7 +101,7 @@
                   <router-link to="/index">Company</router-link>
                 </li>
                 <li @click="menuOpened = false">
-                  <router-link to="/index">Events</router-link>
+                  <router-link to="/event">Events</router-link>
                 </li>
                 <li @click="menuOpened = false">
                   <router-link to="/index">Contact</router-link>
@@ -114,11 +114,10 @@
           </div>
         </div>
       </div>
-      <router-view
-        :style="menuOpened ? 'position:fixed;width:100%' : ''"
-      ></router-view>
-    </el-main>
 
+      <router-view :style="menuOpened ? 'position:fixed;width:100%' : ''">
+      </router-view>
+    </el-main>
     <el-footer class="footer">
       <div class="layout">
         <div class="links_s">
