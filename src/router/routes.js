@@ -48,6 +48,15 @@ const frameIn = [
         },
         component: _import('website/event')
       },
+      {
+        path: 'products',
+        name: 'products',
+        meta: {
+          title: 'products',
+          auth: false
+        },
+        component: _import('website/products')
+      },
     ]
   },
   {

@@ -8,9 +8,14 @@
         <div class="event_list">
           <div v-for="(event, idx) in event_list" :key="idx" class="event_item">
             <router-link to="/index">
-              <div class="event_img">1</div>
-              <div class="event_content">2</div>
-              <div class="event_date">3</div>
+              <div class="event_img"><img :src="event.imgPath" /></div>
+              <div class="event_content">
+                <h3>{{ event.title }}</h3>
+                <p>{{ event.content }}</p>
+              </div>
+              <div class="event_date">
+                <span>{{ event.date.toISOString().split("T")[0] }}</span>
+              </div>
             </router-link>
           </div>
         </div>
@@ -29,36 +34,50 @@ export default {
           title: "Event 1 title",
           imgPath: "http://cleanman-cn.com/uploadimg/event_bimg.jpg",
           content: `Relying on local clay resource advantage and years" persistent operation in sanitary ware industry, Cleanman is committed to providing the highest level of customer service and a comprehensive product...`,
-          date: Date.parse("15 Jan 2020 GMT")
+          date: new Date(Date.parse("15 Jan 2020 GMT"))
         },
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {}
+        {
+          title: "Event 1 title",
+          imgPath: "http://cleanman-cn.com/uploadimg/event_bimg.jpg",
+          content: `Relying on local clay resource advantage and years" persistent operation in sanitary ware industry, Cleanman is committed to providing the highest level of customer service and a comprehensive product...`,
+          date: new Date(Date.parse("15 Jan 2020 GMT"))
+        },
+        {
+          title: "Event 1 title",
+          imgPath: "http://cleanman-cn.com/uploadimg/event_bimg.jpg",
+          content: `Relying on local clay resource advantage and years" persistent operation in sanitary ware industry, Cleanman is committed to providing the highest level of customer service and a comprehensive product...`,
+          date: new Date(Date.parse("15 Jan 2020 GMT"))
+        },
+        {
+          title: "Event 1 title",
+          imgPath: "http://cleanman-cn.com/uploadimg/event_bimg.jpg",
+          content: `Relying on local clay resource advantage and years" persistent operation in sanitary ware industry, Cleanman is committed to providing the highest level of customer service and a comprehensive product...`,
+          date: new Date(Date.parse("15 Jan 2020 GMT"))
+        },
+        {
+          title: "Event 1 title",
+          imgPath: "http://cleanman-cn.com/uploadimg/event_bimg.jpg",
+          content: `Relying on local clay resource advantage and years" persistent operation in sanitary ware industry, Cleanman is committed to providing the highest level of customer service and a comprehensive product...`,
+          date: new Date(Date.parse("15 Jan 2020 GMT"))
+        },
+        {
+          title: "Event 1 title",
+          imgPath: "http://cleanman-cn.com/uploadimg/event_bimg.jpg",
+          content: `Relying on local clay resource advantage and years" persistent operation in sanitary ware industry, Cleanman is committed to providing the highest level of customer service and a comprehensive product...`,
+          date: new Date(Date.parse("15 Jan 2020 GMT"))
+        },
+        {
+          title: "Event 1 title",
+          imgPath: "http://cleanman-cn.com/uploadimg/event_bimg.jpg",
+          content: `Relying on local clay resource advantage and years" persistent operation in sanitary ware industry, Cleanman is committed to providing the highest level of customer service and a comprehensive product...`,
+          date: new Date(Date.parse("15 Jan 2020 GMT"))
+        },
+        {
+          title: "Event 1 title",
+          imgPath: "http://cleanman-cn.com/uploadimg/event_bimg.jpg",
+          content: `Relying on local clay resource advantage and years" persistent operation in sanitary ware industry, Cleanman is committed to providing the highest level of customer service and a comprehensive product...`,
+          date: new Date(Date.parse("15 Jan 2020 GMT"))
+        }
       ]
     };
   },
@@ -69,10 +88,11 @@ export default {
 </script>
 <style scoped lang="scss">
 .container * {
-  transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+  transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
 }
 .container {
   .title {
+    height: 15%;
     h3 {
       font-size: 25px !important;
     }
@@ -93,35 +113,106 @@ export default {
     }
   }
   .event_container {
-    height: calc(100vh - 60px);
+    @media (min-width: $lg) {
+      height: calc(100vh - 80px);
+      overflow: scroll;
+    }
     width: 100%;
-    background-image: url("../../../assets/pictures/event/bg.jpeg");
-    background-size: cover;
-    background-repeat: no-repeat;
+    background: white;
     .event_list_block {
-      height: 75%;
-      background: white;
-      margin: 0 8%;
+      height: 100%;
+      margin: 0 3%;
+      @media (min-width: $lg) {
+        margin: 0 8%;
+      }
       .event_list {
         padding: 0;
-        overflow: scroll;
+        @media (min-width: $lg) {
+          overflow: scroll;
+        }
         height: 100%;
         margin: 0;
         .event_item {
-          border: 1px solid black;
-          padding: 10px;
+          margin: 2% 2% 15% 2%;
+          color: black;
+          padding: 20px;
+          box-shadow: 0 0 25px 0 rgb(0 0 0 / 10%);
+          border-radius: 20px;
+          overflow: hidden;
+          @media (min-width: $lg) {
+            margin: 2% 5% 2% 5%;
+            &:hover {
+              .event_img {
+                overflow: hidden;
+                img {
+                  transform: scale(1.03, 1.03);
+                }
+              }
+              .event_date {
+                color: lightblue;
+              }
+              .event_content {
+                transform: scale(1.03, 1.03);
+              }
+            }
+          }
           a {
+            width: 100%;
             text-decoration: none;
             color: inherit;
             display: inline-block;
             .event_img {
+              width: 100%;
               float: left;
+              img {
+                width: 100%;
+              }
+              @media (min-width: $lg) {
+                width: 45%;
+                img {
+                  width: 78%;
+                }
+              }
             }
             .event_content {
               float: left;
+              text-align: center;
+              width: 100%;
+              h3 {
+                margin: 3%;
+                font-size: 25px;
+              }
+              p {
+                margin: 3%;
+              }
+              @media (min-width: $lg) {
+                width: 35%;
+                h3 {
+                  margin: 4% 0 0 0;
+                  font-size: 32px;
+                }
+                p {
+                  margin: 10% 3% 3% 3%;
+                }
+              }
             }
             .event_date {
+              text-align: center;
               float: right;
+              width: 100%;
+              @media (min-width: $lg) {
+                width: 15%;
+                padding-top: 5%;
+                text-align: left;
+              }
+              span {
+                position: relative;
+                top: 10%;
+                font-size: 20px;
+                @media (min-width: $lg) {
+                  font-size: 30px;
+                }
+              }
             }
           }
         }
