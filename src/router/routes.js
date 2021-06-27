@@ -1,5 +1,6 @@
 import layoutHeaderAside from '@/layout/header-aside'
 import mlefLayout from '@/layout/mlef-layout'
+import productsLayout from '@/layout/productsLayout'
 // 由于懒加载页面太多的话会造成webpack热更新太慢，所以开发环境不使用懒加载，只有生产环境使用懒加载
 const _import = require('@/libs/util.import.' + process.env.NODE_ENV)
 
@@ -49,7 +50,7 @@ const frameIn = [
         component: _import('website/event')
       },
       {
-        path: 'products',
+        path: 'products/:name?',
         name: 'products',
         meta: {
           title: 'products',
